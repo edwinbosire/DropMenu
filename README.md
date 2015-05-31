@@ -10,7 +10,7 @@ To see how it works, have a look at the Examples folder.
 This has not been designed to be dropped into a project as it is, a bit of re-working must be done. I will set it up as an independent component soon.
 
 
-![](http://i.imgur.com/OLexV1O.gif)
+![](http://i.imgur.com/ese3dUO.gif)
 
 If you get to use it, please let me know on [Twitter](http://www.twitter.com/edwinbosire)
 
