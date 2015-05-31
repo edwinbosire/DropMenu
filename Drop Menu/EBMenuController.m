@@ -12,6 +12,7 @@
 #import "EBMenuCollectionViewCell.h"
 #import "EBHeaderCollectionReusableView.h"
 
+static const CGFloat kMaxBlackMaskAlpha = 0.8f;
 static const  CGFloat headerHeight = 64.0f;
 static const CGFloat menuItemHeight = 150.0f;
 static const CGFloat menuThresholdVelocity = 1000.0f;
@@ -32,6 +33,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 
 @property (nonatomic) UICollectionView *menuCollectionView;
 @property (nonatomic) UIViewController *contentViewController;
+@property (nonatomic) UIView *animationMask;
 @property (nonatomic) NSArray *menuItems;
 @property (nonatomic) MenuState state;
 @property (nonatomic) CGFloat menuDefaultHeight;
@@ -50,6 +52,8 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 		self.backgroundColor = [UIColor blackColor];
 		self.contentViewController = viewController;
 		[self addSubview:self.menuCollectionView];
+		[self insertSubview:self.animationMask atIndex:0];
+
 	}
 	return self;
 }
@@ -92,6 +96,19 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 	return _menuCollectionView;
 }
 
+- (UIView *)animationMask {
+	
+	if (!_animationMask) {
+		
+		_animationMask = [[UIView alloc] initWithFrame:self.bounds];
+		_animationMask.backgroundColor = [UIColor blackColor];
+		_animationMask.alpha = 0.0;
+		_animationMask.autoresizingMask = UIViewAutoresizingFlexibleHeight | UIViewAutoresizingFlexibleWidth;
+	}
+	
+	return _animationMask;
+}
+
 - (void)setContentViewController:(UIViewController *)contentViewController {
 	
 	if (contentViewController == _contentViewController) {
@@ -128,6 +145,10 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 			
 			if (viewCenter.y >= screenSize.height/2 && viewCenter.y <= screenSize.height/2 + self.menuDefaultHeight) {
 				self.contentViewController.view.center = viewCenter;
+
+				CGFloat transformPercentage = 1- fabs((CGRectGetMinY(self.contentViewController.view.frame) / self.menuDefaultHeight));
+				[self transformAtPercentage:transformPercentage];
+
 			}
 		}
 		[gesture setTranslation:CGPointZero inView:self.contentViewController.view];
@@ -189,8 +210,13 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 						 [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 						 self.contentViewController.view.center = CGPointMake(self.contentViewController.view.center.x, screenSize.height/2 + self.menuDefaultHeight);
 							
+						 CGAffineTransform transf = CGAffineTransformIdentity;
+						 self.menuCollectionView.transform = CGAffineTransformScale(transf, 1.0f, 1.0f);
+
+						 self.animationMask.alpha = 0.0f;
 						} completion:^(BOOL finished) {
 							self.state = Open;
+							[self sendSubviewToBack:self.animationMask];
 						}];
 }
 
@@ -208,12 +234,26 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 						 
 						 [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
 						 self.contentViewController.view.center = CGPointMake(self.contentViewController.view.center.x, screenSize.height/2);
+						
+						 CGAffineTransform transf = CGAffineTransformIdentity;
+						 self.menuCollectionView.transform = CGAffineTransformScale(transf, 0.9f, 0.9f);
+
+						 self.animationMask.alpha = kMaxBlackMaskAlpha;
 					 } completion:^(BOOL finished) {
 						 self.state = Closed;
-						 
+						 [self bringSubviewToFront:self.animationMask];
 					 }];
 }
 
+#pragma mark - Set the required transformation based on percentage
+- (void) transformAtPercentage:(CGFloat)percentage {
+	
+	CGAffineTransform transf = CGAffineTransformIdentity;
+	CGFloat newTransformValue =  fabs((percentage)/10 - 1);
+	CGFloat newAlphaValue = percentage* kMaxBlackMaskAlpha;
+	self.menuCollectionView.transform = CGAffineTransformScale(transf,newTransformValue,newTransformValue);
+	self.animationMask.alpha = newAlphaValue;
+}
 #pragma mark - Menu Collection View Delegate/Datasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
