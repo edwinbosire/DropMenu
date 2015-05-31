@@ -12,4 +12,12 @@ This has not been designed to be dropped into a project as it is, a bit of re-wo
 
 ![](http://i.imgur.com/OLexV1O.gif)
 
+If you get to use it, please let me know on [Twitter](http://www.twitter.com/edwinbosire)
 
+##AUTHOR
+
+[Edwin B](http://www.twitter.com/edwinbosire)
+
+##LICENSE
+
+[Apache License](https://github.com/edwinbosire/DropMenu/blob/master/LICENSE)
