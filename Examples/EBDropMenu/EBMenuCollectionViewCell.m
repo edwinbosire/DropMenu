@@ -30,11 +30,11 @@
 	NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
 	[paragraph setAlignment:NSTextAlignmentCenter];
 	
-	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Lato-Black" size:16.0f],
+	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Lato-Black" size:14.0f],
 								 NSForegroundColorAttributeName : [UIColor whiteColor],
 								 NSParagraphStyleAttributeName : paragraph,
 								 NSKernAttributeName : @2};
-	NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:menuItem.title.capitalizedString attributes:attributes];
+	NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:menuItem.title.uppercaseString attributes:attributes];
 	self.title.attributedText = attrString;
 	
 	[self.title sizeToFit];

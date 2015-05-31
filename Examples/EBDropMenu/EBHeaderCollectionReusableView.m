@@ -21,11 +21,11 @@
 	NSMutableParagraphStyle *paragraph = [[NSMutableParagraphStyle alloc] init];
 	[paragraph setAlignment:NSTextAlignmentCenter];
 
-	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Lato-Heavy" size:22.0f],
+	NSDictionary *attributes = @{NSFontAttributeName: [UIFont fontWithName:@"Lato-Heavy" size:16.0f],
 								 NSForegroundColorAttributeName : [UIColor whiteColor],
 								 NSParagraphStyleAttributeName : paragraph,
 								 NSKernAttributeName : @2};
-	NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:_titleText.capitalizedString attributes:attributes];
+	NSAttributedString *attrString = [[NSAttributedString alloc] initWithString:_titleText.uppercaseString attributes:attributes];
 
 	self.title.attributedText = attrString;
 }

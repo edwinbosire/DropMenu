@@ -148,6 +148,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 
 				CGFloat transformPercentage = 1- fabs((CGRectGetMinY(self.contentViewController.view.frame) / self.menuDefaultHeight));
 				[self transformAtPercentage:transformPercentage];
+				[UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleLightContent;
 				 [self bringSubviewToFront:self.animationMask];
 
 			}
