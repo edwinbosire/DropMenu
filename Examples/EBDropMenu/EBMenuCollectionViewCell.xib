@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="EBMenuCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Politics" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k3o-bo-oBq">
+                        <rect key="frame" x="46" y="64" width="58" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="k3o-bo-oBq" secondAttribute="height" multiplier="58:21" id="Ta6-Qn-NPS"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="17"/>
+                        <color key="textColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ta6-Qn-NPS"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0ZQ-rO-lCB">
+                        <rect key="frame" x="47" y="85" width="58" height="3"/>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.4941176471" blue="0.1333333333" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="3" id="KTG-qD-pd6"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="0ZQ-rO-lCB" firstAttribute="width" secondItem="k3o-bo-oBq" secondAttribute="width" id="985-zu-kUf"/>
+                <constraint firstAttribute="centerX" secondItem="0ZQ-rO-lCB" secondAttribute="centerX" constant="-1" id="BDA-u2-dRr"/>
+                <constraint firstAttribute="centerY" secondItem="k3o-bo-oBq" secondAttribute="centerY" id="JxV-Us-D4y"/>
+                <constraint firstAttribute="centerX" secondItem="k3o-bo-oBq" secondAttribute="centerX" id="ZMa-K6-hdg"/>
+                <constraint firstItem="0ZQ-rO-lCB" firstAttribute="top" secondItem="k3o-bo-oBq" secondAttribute="bottom" id="o2j-qk-zp5"/>
+                <constraint firstItem="0ZQ-rO-lCB" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="47" id="xgq-wx-eAy"/>
+            </constraints>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="xgq-wx-eAy"/>
+                </mask>
+            </variation>
+            <connections>
+                <outlet property="decorator" destination="0ZQ-rO-lCB" id="Iy3-66-FXq"/>
+                <outlet property="title" destination="k3o-bo-oBq" id="8VB-2F-3hd"/>
+            </connections>
+            <point key="canvasLocation" x="219" y="280"/>
+        </collectionViewCell>
+    </objects>
+</document>
