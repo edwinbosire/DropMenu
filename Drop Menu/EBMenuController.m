@@ -18,8 +18,8 @@ static const CGFloat menuThresholdVelocity = 1000.0f;
 static const CGFloat menuCloseVelocity = 1200.0f;
 static const NSTimeInterval menuOpenAnimationDuration = 0.28f;
 static const NSTimeInterval menuCloseAnimationDuration = 0.18f;
-static const NSString *menuItemCellReusableID = @"menuItemCellReusableID";
-static const NSString *menuCollectionViewHeader = @"menuCollectionViewHeader";
+static  NSString *const menuItemCellReusableID = @"menuItemCellReusableID";
+static  NSString *const menuCollectionViewHeader = @"menuCollectionViewHeader";
 
 
 typedef NS_OPTIONS(NSInteger, MenuState) {
