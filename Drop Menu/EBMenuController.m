@@ -148,6 +148,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 
 				CGFloat transformPercentage = 1- fabs((CGRectGetMinY(self.contentViewController.view.frame) / self.menuDefaultHeight));
 				[self transformAtPercentage:transformPercentage];
+				 [self bringSubviewToFront:self.animationMask];
 
 			}
 		}
@@ -254,6 +255,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 	self.menuCollectionView.transform = CGAffineTransformScale(transf,newTransformValue,newTransformValue);
 	self.animationMask.alpha = newAlphaValue;
 }
+
 #pragma mark - Menu Collection View Delegate/Datasource
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
