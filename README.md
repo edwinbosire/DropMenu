@@ -51,9 +51,8 @@ Note, that the implementation in the example happens inside a custom `UINavigati
 
 2. Can I have more than 4 menu items   
 
-    **YES, but this isn't tested, you 
-    might need to modify `menuHeight` constant in `EBMenuController.m` to make it all fit.
-**  
+    ** YES, but this isn't tested, you 
+    might need to modify `menuHeight` constant in `EBMenuController.m` to make it all fit.**  
 3. Does it support iPad?  
 **Yes, maybe, its not been tested, but there is no reason it shouldn't work** 
 
