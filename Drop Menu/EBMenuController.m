@@ -15,6 +15,7 @@
 static const CGFloat kMaxBlackMaskAlpha = 0.8f;
 static const  CGFloat headerHeight = 64.0f;
 static const CGFloat menuItemHeight = 150.0f;
+static const CGFloat menuHeight = 368.0f;
 static const CGFloat menuThresholdVelocity = 1000.0f;
 static const CGFloat menuCloseVelocity = 1200.0f;
 static const NSTimeInterval menuOpenAnimationDuration = 0.28f;
@@ -62,7 +63,7 @@ typedef NS_OPTIONS(NSInteger, MenuState) {
 - (CGFloat)menuDefaultHeight {
 	
 	if (!_menuCollectionView) {
-		return 368.0f;
+		return menuHeight;
 	}
 	
 	return self.menuCollectionView.contentSize.height;

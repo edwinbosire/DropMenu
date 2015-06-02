@@ -16,16 +16,21 @@
             <autoresizingMask key="autoresizingMask"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6F9-iw-eTa">
-                    <rect key="frame" x="138" y="14" width="45" height="21"/>
+                    <rect key="frame" x="138" y="20" width="45" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="21" id="nDs-FC-qCp"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Lato-Black" family="Lato" pointSize="17"/>
                     <color key="textColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Bd-Ko-Afl">
-                    <rect key="frame" x="269" y="9" width="32" height="32"/>
+                    <rect key="frame" x="266" y="10" width="32" height="32"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="32" id="NWx-oc-lJd"/>
                         <constraint firstAttribute="width" constant="32" id="Ybc-CL-7Sh"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="32" id="tnI-aC-Nk5"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="zpr-JA-2qZ"/>
                     </constraints>
                     <color key="tintColor" red="0.99607849120000003" green="0.99607849120000003" blue="0.99215692280000001" alpha="1" colorSpace="deviceRGB"/>
                     <state key="normal" image="settings-icon">
@@ -38,10 +43,10 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="3Bd-Ko-Afl" secondAttribute="trailing" constant="19" id="G1V-dn-a6T"/>
-                <constraint firstAttribute="centerY" secondItem="6F9-iw-eTa" secondAttribute="centerY" id="Zep-hY-IAP"/>
+                <constraint firstAttribute="trailing" secondItem="3Bd-Ko-Afl" secondAttribute="trailing" constant="22" id="G1V-dn-a6T"/>
+                <constraint firstAttribute="bottom" secondItem="6F9-iw-eTa" secondAttribute="bottom" constant="9" id="Kc6-go-BYC"/>
+                <constraint firstAttribute="bottom" secondItem="3Bd-Ko-Afl" secondAttribute="bottom" constant="8" id="sY9-RB-5hd"/>
                 <constraint firstAttribute="centerX" secondItem="6F9-iw-eTa" secondAttribute="centerX" id="uEV-Ig-xRP"/>
-                <constraint firstAttribute="centerY" secondItem="3Bd-Ko-Afl" secondAttribute="centerY" id="x30-tL-0Sy"/>
             </constraints>
             <connections>
                 <outlet property="settingsButton" destination="3Bd-Ko-Afl" id="7TJ-rG-nrM"/>
