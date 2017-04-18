@@ -13,7 +13,7 @@ This has not been designed to be dropped into a project as it is, a bit of re-wo
   <img src="http://i.imgur.com/ese3dUO.gif" alt="Animated gif">
 </p>
 
-##Setup
+## Setup
 
 Drag `EBMenucontroller & EBMenuItem` from the **Drop Menu** folder into your project.
 
@@ -45,7 +45,7 @@ For each menu item, there is a corresponding completionBlock that gets called wh
 
 Note, that the implementation in the example happens inside a custom `UINavigationController`, this doesn't have to be case with everyone. You can easily setup the menu items in the delegate and instead of adding the viewcontrollers to self.viewcontrollers you'll do it in `self.navigationcontroller.viewcontrollers'
 
-#FAQ
+# FAQ
 1. Does it support storyboards?   
 **YES**
 
@@ -59,10 +59,10 @@ Note, that the implementation in the example happens inside a custom `UINavigati
 
 If you get to use it, please let me know on [Twitter](http://www.twitter.com/edwinbosire)
 
-##AUTHOR
+## AUTHOR
 
 This component has been lovingly crafted by [Edwin B](http://www.twitter.com/edwinbosire)
 
-##LICENSE
+## LICENSE
 
 [Apache License](https://github.com/edwinbosire/DropMenu/blob/master/LICENSE)
